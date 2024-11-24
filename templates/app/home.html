@@ -3,12 +3,16 @@
 {% block content %}
     <h1>Lista dos Artigos</h1>
 
+{% if articles %}
     <a href="{% url 'create_article' %}">Create Article</a>
-
         <ul>
             {% for article in articles %}
                 <li> <a href="{% url 'update_article' article.id %}">{{ article.title }}</a>  with {{ article.word_count }} words.</li>
             {% endfor %}
         </ul>
+{% else %}
+        <p>Nenhum artigo foi publicado ainda!</p>
+{% endif %}
+
 {% endblock content %}
 
