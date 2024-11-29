@@ -12,6 +12,7 @@
         </ul>
 {% else %}
         <p>Nenhum artigo foi publicado ainda!</p>
+        <a href="{% url 'create_article' %}">Create Article</a>
 {% endif %}
 
 {% endblock content %}
